@@ -3,18 +3,21 @@ import sys
 
 program_name = 'cpplint.py'
 dir_path = 'E:/aISP/Code/aisp_sw_2.0/aisp/src/obc/'
+
+fileter = '--filter=-whitespace/braces'
+
 extensions = ('.cpp', '.h', '.hpp', '.cc')
 
-argvlist = []
+filelist = []
 
 # print type(extensions)
 
 for file_name in os.listdir(dir_path):
     if file_name.endswith(extensions):
-        argvlist.append(dir_path + file_name)
+        filelist.append(dir_path + file_name)
 
-sys.argv = [program_name] + argvlist
+sys.argv = [program_name] + [fileter] + filelist
 
-# print argvlist
-
+# print filelist
+	
 execfile(program_name)
